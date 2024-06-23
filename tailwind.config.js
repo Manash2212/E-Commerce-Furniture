@@ -4,6 +4,7 @@ export default {
   theme: {
     fontFamily: {
       primary: "Jost",
+      secondary: "Roboto",
     },
 
     screens: {

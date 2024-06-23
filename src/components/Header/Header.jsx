@@ -73,7 +73,8 @@ const Header = () => {
                 initial={{ opacity: 0, translateY: -100 }}
                 animate={{ opacity: 1, translateY: 0 }}
                 transition={{ duration: 1, delay: i * 0.1 }}
-                className="text-xl active:font-bold focus:font-bold "
+                whileFocus={{ scale: 1.1 }}
+                className="text-xl active:font-bold focus:font-bold hover:text-blue-900"
               >
                 <Link to={item.path}>{item.display}</Link>
               </motion.li>
