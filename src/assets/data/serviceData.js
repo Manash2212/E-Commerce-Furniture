@@ -1,26 +1,33 @@
+import {
+  RiTruckLine,
+  RiRefreshLine,
+  RiSecurePaymentLine,
+  RiExchangeLine,
+} from "react-icons/ri";
+
 const serviceData = [
   {
-    icon: "ri-truck-line",
+    icon: RiTruckLine,
     title: "Free Shipping",
-    subtitle: "Lorem ipsum dolor sit amet.",
+    subtitle: "Dalivary Free Pan India.",
     bg: "#fdefe6",
   },
   {
-    icon: "ri-refresh-line",
+    icon: RiRefreshLine,
     title: "Easy Returns",
-    subtitle: "Lorem ipsum dolor sit amet.",
+    subtitle: "Returns within 14 days.",
     bg: "#ceebe9",
   },
   {
-    icon: "ri-secure-payment-line",
+    icon: RiSecurePaymentLine,
     title: "Secure Payment",
-    subtitle: "Lorem ipsum dolor sit amet.",
+    subtitle: "Secure Payment Option.",
     bg: "#e2f2b2",
   },
   {
-    icon: "ri-exchange-dollar-line",
-    title: " Back Guarantee",
-    subtitle: "Lorem ipsum dolor sit amet.",
+    icon: RiExchangeLine,
+    title: " Refund Guarantee",
+    subtitle: "Refund within 24 Hours",
     bg: "#d6e5fb",
   },
 ];

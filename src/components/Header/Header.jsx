@@ -35,8 +35,8 @@ const Header = () => {
     { path: "/cart", display: "Cart" },
   ];
   return (
-    <header className=" w-screen font-primary shadow-md py-2 ">
-      <div className="container max-w-[90%] mx-auto  flex items-center justify-between ">
+    <header className=" w-full font-primary shadow-md py-2  ">
+      <div className="container max-w-[90%] mx-auto flex items-center justify-between ">
         <div className="left flex items-end justify-around ">
           <motion.img
             variants={logo_img}
