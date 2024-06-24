@@ -3,8 +3,8 @@ import { motion } from "framer-motion";
 
 const Services = () => {
   return (
-    <section className="w-[100%] overflow-x-hidden border-2 border-red-500">
-      <div className="container max-w-[70%] mx-auto py-10 ">
+    <section className="w-full">
+      <div className="container max-w-[80%] mx-auto py-10 ">
         <div className="items flex items-center justify-around gap-5">
           {serviceData.map((item, i) => {
             const IconComponent = item.icon;
@@ -16,7 +16,7 @@ const Services = () => {
                 transition={{ duration: 1, delay: i * 0.1 }}
               >
                 <motion.div
-                  className="item1  flex items-center justify-center  py-5 px-5 "
+                  className="item1  flex items-center justify-center  py-5 px-3 cursor-pointer gap-2"
                   style={{ background: `${item.bg}` }}
                   whileHover={{ scale: 1.1 }}
                 >

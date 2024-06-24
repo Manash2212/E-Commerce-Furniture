@@ -16,7 +16,7 @@ const hero_slider = {
 
 const Hero = ({ year }) => {
   return (
-    <section className="w-full bg-blue-100 font-primary">
+    <section className="w-full bg-blue-100 font-primary ">
       <div className="container w-[90%] mx-auto flex py-5 items-center justify-between">
         <div className="left flex flex-col flex-1 items-start  gap-2">
           <motion.p

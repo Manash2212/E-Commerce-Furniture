@@ -30,13 +30,13 @@ const mid_Sec = {
 
 const Header = () => {
   const list_links = [
-    { path: "/home", display: "Home" },
+    { path: "/", display: "Home" },
     { path: "/shop", display: "Shop" },
     { path: "/cart", display: "Cart" },
   ];
   return (
-    <header className=" w-full font-primary shadow-md py-2  ">
-      <div className="container max-w-[90%] mx-auto flex items-center justify-between ">
+    <header className=" w-full font-primary shadow-md py-2 sticky z-10 ">
+      <div className="container max-w-[90%] mx-auto flex items-center justify-between  ">
         <div className="left flex items-end justify-around ">
           <motion.img
             variants={logo_img}
