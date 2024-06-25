@@ -3,9 +3,9 @@ import { motion } from "framer-motion";
 
 const Services = () => {
   return (
-    <section className="w-full">
+    <section className="w-screen">
       <div className="container max-w-[80%] mx-auto py-10 ">
-        <div className="items flex items-center justify-around gap-5">
+        <div className="items flex flex-wrap items-center justify-around gap-5">
           {serviceData.map((item, i) => {
             const IconComponent = item.icon;
             return (

@@ -8,6 +8,7 @@ import User_Icon from "../../assets/images/user-icon.png";
 import { CiHeart } from "react-icons/ci";
 import { MdOutlineShoppingCart } from "react-icons/md";
 import { IoReorderThree } from "react-icons/io5";
+import { useEffect, useState } from "react";
 
 //
 
@@ -29,13 +30,24 @@ const mid_Sec = {
 };
 
 const Header = () => {
+  const [isActive, setIsActive] = useState(false);
+
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+      window.scrollY > 60 ? setIsActive(true) : setIsActive(false);
+    });
+  });
   const list_links = [
     { path: "/", display: "Home" },
     { path: "/shop", display: "Shop" },
     { path: "/cart", display: "Cart" },
   ];
   return (
-    <header className=" w-full font-primary shadow-md py-2 sticky z-10 ">
+    <header
+      className={`${
+        isActive ? " bg-gray-100  py-2 shadow-md" : " bg-none py-4 "
+      } fixed w-screen z-10 transition-all font-primary`}
+    >
       <div className="container max-w-[90%] mx-auto flex items-center justify-between  ">
         <div className="left flex items-end justify-around ">
           <motion.img
@@ -65,7 +77,7 @@ const Header = () => {
             </motion.span>
           </div>
         </div>
-        <div className="mid ">
+        <div className="mid max-md:hidden md:block">
           <ul className="flex gap-6  items-center justify-between">
             {list_links.map((item, i) => (
               <motion.li
@@ -110,9 +122,9 @@ const Header = () => {
             alt="users Icon"
             className="w-[30px] cursor-pointer"
           />
-        </div>
-        <div className="right-mobile hidden">
-          <IoReorderThree />
+          <div className="right-mobile sm:block md:hidden text-xl">
+            <IoReorderThree />
+          </div>
         </div>
       </div>
     </header>
