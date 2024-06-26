@@ -20,7 +20,7 @@ const Hero = ({ year }) => {
       <div className="container w-[90%] mx-auto flex py-10 items-center justify-between max-sm:flex-col max-sm:gap-10">
         <div className="left flex flex-col flex-1 items-start  gap-2">
           <motion.p
-            className="text-gray-600"
+            className="text-gray-600 max-sm:text-xs"
             initial={{ x: -100, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             transition={{ duration: 0.7, ease: "easeIn" }}
@@ -28,7 +28,7 @@ const Hero = ({ year }) => {
             Trending Product in {year}
           </motion.p>
           <motion.h2
-            className="text-2xl tracking-wider font-bold font-secondary"
+            className="text-2xl tracking-wider font-bold font-secondary max-sm:text-lg"
             initial={{ x: -100, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             transition={{ duration: 0.8, ease: "easeIn" }}
@@ -37,7 +37,7 @@ const Hero = ({ year }) => {
             Minimalistic & Elegent. Just like wow..!
           </motion.h2>
           <motion.p
-            className="text-gray-600"
+            className="text-gray-600 max-sm:text-xs"
             initial={{ x: -100, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             transition={{ duration: 0.9, ease: "easeIn" }}

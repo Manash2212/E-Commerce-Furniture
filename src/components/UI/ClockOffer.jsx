@@ -6,7 +6,7 @@ import Clock from "./Clock";
 const ClockOffer = () => {
   return (
     <div className=" mt-10 w-full bg-slate-900">
-      <div className="container3 max-w-[90%]    mx-auto font-primary flex items-center justify-between max-sm:flex-col max-sm:py-5 max-sm:gap-10">
+      <div className="container3 max-w-[80%]    mx-auto font-primary flex items-center justify-between max-sm:flex-col max-sm:py-5 max-sm:gap-10">
         <div className="left flex items-start justify-start  h-full ">
           <motion.div
             className="item flex flex-col items-start text-white"

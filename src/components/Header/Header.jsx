@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
+import { easeIn, motion } from "framer-motion";
 // Importing images
 import Logo from "../../assets/images/eco-logo.png";
 import User_Icon from "../../assets/images/user-icon.png";
@@ -9,6 +9,7 @@ import { CiHeart } from "react-icons/ci";
 import { MdOutlineShoppingCart } from "react-icons/md";
 import { IoReorderThree } from "react-icons/io5";
 import { useEffect, useState } from "react";
+import { RxCross2 } from "react-icons/rx";
 
 //
 
@@ -31,16 +32,13 @@ const mid_Sec = {
 
 const Header = () => {
   const [isActive, setIsActive] = useState(false);
+  const [showMenu, setShowMenu] = useState(false);
 
   useEffect(() => {
     window.addEventListener("scroll", () => {
       window.scrollY > 60 ? setIsActive(true) : setIsActive(false);
     });
   });
-
-  const handleClick = () => {
-    console.log("The Mobile menu is Clicked");
-  };
 
   const list_links = [
     { path: "/", display: "Home" },
@@ -53,7 +51,7 @@ const Header = () => {
         isActive ? " bg-gray-100  py-2 shadow-md" : " bg-none py-4 "
       } fixed top-0 w-screen z-10 transition-all font-primary`}
     >
-      <div className="container max-w-[90%] mx-auto flex items-center justify-between  ">
+      <div className="container max-w-[90%] mx-auto flex items-center justify-between ">
         <Link to={"/"}>
           <div className="left flex items-end justify-around cursor-pointer">
             <motion.img
@@ -84,8 +82,8 @@ const Header = () => {
             </div>
           </div>
         </Link>
-        <div className="mid max-md:hidden md:block">
-          <ul className="flex gap-6  items-center justify-between">
+        <div className="mid max-sm:hidden ">
+          <ul className="flex gap-6  items-center justify-between ">
             {list_links.map((item, i) => (
               <motion.li
                 key={i}
@@ -130,12 +128,36 @@ const Header = () => {
             className="w-[30px] cursor-pointer"
           />
           <div
-            className="right-mobile sm:block md:hidden text-xl"
-            onClick={handleClick}
+            className="right-mobile max-sm:block sm:hidden  text-xl z-99 cursor-pointer"
+            onClick={() => setShowMenu(!showMenu)}
           >
-            <IoReorderThree />
+            {showMenu ? <RxCross2 /> : <IoReorderThree />}
           </div>
         </div>
+        {/* If Mobile menu  */}
+        {showMenu && (
+          <motion.div
+            className="mid absolute top-[52px] right-0  w-[40%] bg-slate-300 h-[50vh] flex flex-col justify-center items-center  "
+            initial={{ x: 100 }}
+            animate={{ x: 0 }}
+            transition={{ ease: easeIn, duration: 0.5 }}
+          >
+            <ul className="flex flex-col gap-6 items-center justify-between bg-gray300 text-black">
+              {list_links.map((item, i) => (
+                <motion.li
+                  key={i}
+                  initial={{ opacity: 0, scale: 0 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 1, delay: i * 0.1 }}
+                  whileFocus={{ scale: 1.1 }}
+                  className="text-xl active:font-bold focus:font-bold hover:text-blue-900"
+                >
+                  <Link to={item.path}>{item.display}</Link>
+                </motion.li>
+              ))}
+            </ul>
+          </motion.div>
+        )}
       </div>
     </header>
   );
