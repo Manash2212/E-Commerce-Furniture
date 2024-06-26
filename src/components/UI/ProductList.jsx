@@ -9,7 +9,7 @@ const card_var = {
 const ProductList = ({ data }) => {
   return (
     <div className=" w-full mt-10">
-      <div className="max-w-[90%] flex flex-wrap items-center gap-5 mx-auto  ">
+      <div className="max-w-[90%] flex flex-wrap items-center max-sm:justify-center gap-5 mx-auto ">
         {data?.map((item, i) => (
           <motion.div
             key={item.id}
@@ -21,6 +21,7 @@ const ProductList = ({ data }) => {
             viewport={{
               once: true,
             }}
+            className="mx-auto"
           >
             <ProductCard item={item} />
           </motion.div>

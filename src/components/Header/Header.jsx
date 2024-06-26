@@ -37,6 +37,11 @@ const Header = () => {
       window.scrollY > 60 ? setIsActive(true) : setIsActive(false);
     });
   });
+
+  const handleClick = () => {
+    console.log("The Mobile menu is Clicked");
+  };
+
   const list_links = [
     { path: "/", display: "Home" },
     { path: "/shop", display: "Shop" },
@@ -46,37 +51,39 @@ const Header = () => {
     <header
       className={`${
         isActive ? " bg-gray-100  py-2 shadow-md" : " bg-none py-4 "
-      } fixed w-screen z-10 transition-all font-primary`}
+      } fixed top-0 w-screen z-10 transition-all font-primary`}
     >
       <div className="container max-w-[90%] mx-auto flex items-center justify-between  ">
-        <div className="left flex items-end justify-around ">
-          <motion.img
-            variants={logo_img}
-            initial="hidden"
-            animate="visible"
-            src={Logo}
-            alt="Company-logo"
-            className="h-12"
-          />
-          <div className="heading flex flex-col ">
-            <motion.h1
-              variants={logo_name}
+        <Link to={"/"}>
+          <div className="left flex items-end justify-around cursor-pointer">
+            <motion.img
+              variants={logo_img}
               initial="hidden"
               animate="visible"
-              className="font-bold text-xl tracking-wide leading-4"
-            >
-              Multimart
-            </motion.h1>
-            <motion.span
-              variants={logo_name2}
-              initial="hidden"
-              animate="visible"
-              className="text-xs font-light"
-            >
-              Since 1999
-            </motion.span>
+              src={Logo}
+              alt="Company-logo"
+              className="h-12 max-sm:h-[36px]"
+            />
+            <div className="heading flex flex-col ">
+              <motion.h1
+                variants={logo_name}
+                initial="hidden"
+                animate="visible"
+                className="font-bold text-xl max-sm:text-sm tracking-wide leading-4"
+              >
+                Multimart
+              </motion.h1>
+              <motion.span
+                variants={logo_name2}
+                initial="hidden"
+                animate="visible"
+                className="text-xs font-light max-sm:text-[10px]"
+              >
+                Since 1999
+              </motion.span>
+            </div>
           </div>
-        </div>
+        </Link>
         <div className="mid max-md:hidden md:block">
           <ul className="flex gap-6  items-center justify-between">
             {list_links.map((item, i) => (
@@ -122,7 +129,10 @@ const Header = () => {
             alt="users Icon"
             className="w-[30px] cursor-pointer"
           />
-          <div className="right-mobile sm:block md:hidden text-xl">
+          <div
+            className="right-mobile sm:block md:hidden text-xl"
+            onClick={handleClick}
+          >
             <IoReorderThree />
           </div>
         </div>

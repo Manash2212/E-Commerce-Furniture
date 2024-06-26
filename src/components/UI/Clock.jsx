@@ -52,30 +52,30 @@ const Clock = () => {
   return (
     <div>
       <div className="container flex items-center gap-2">
-        <div className="item flex items-center gap-2 font-secondary">
-          <div className="child flex flex-col items-center shadow-inner contrast-150 shadow-gray-600 px-2  ">
-            <h2 className="text-2xl font-secondary">{days}</h2>
+        <div className="item flex items-center gap-2 font-primary">
+          <div className="child rounded-full py-2 px-2 flex flex-col items-center    ">
+            <h2 className="text-2xl max-sm:text-xl ">{days}</h2>
             <h2 className="text-xs ">Days</h2>
           </div>
           <span className="text-2xl font-semibold">:</span>
         </div>
-        <div className="item flex items-center gap-2 font-secondary">
-          <div className="child flex flex-col items-center shadow-inner contrast-150 shadow-gray-600 px-2 ">
-            <h2 className="text-2xl font-secondary">{hours}</h2>
+        <div className="item flex items-center gap-2 font-primary">
+          <div className="child rounded-full py-2 px-2 flex flex-col items-center   ">
+            <h2 className="text-2xl max-sm:text-xl ">{hours}</h2>
             <h2 className="text-xs">Hours</h2>
           </div>
           <span className="text-2xl font-semibold">:</span>
         </div>
-        <div className="item flex items-center gap-2 font-secondary">
-          <div className="child flex flex-col items-center shadow-inner contrast-150 shadow-gray-600 px-2 ">
-            <h2 className="text-2xl font-secondary">{minutes}</h2>
+        <div className="item flex items-center gap-2 font-primary">
+          <div className="child rounded-full py-2 px-2 flex flex-col items-center   ">
+            <h2 className="text-2xl max-sm:text-xl ">{minutes}</h2>
             <h2 className="text-xs">Minutes</h2>
           </div>
           <span className="text-2xl font-semibold">:</span>
         </div>
-        <div className="item flex items-center gap-2 font-secondary">
-          <div className="child flex flex-col items-center shadow-inner contrast-150 shadow-gray-600 px-2 ">
-            <h2 className="text-2xl font-secondary">{seconds}</h2>
+        <div className="item flex items-center gap-2 font-primary">
+          <div className="child rounded-full py-2 px-2 flex flex-col items-center   ">
+            <h2 className="text-2xl max-sm:text-xl ">{seconds}</h2>
             <h2 className="text-xs">Seconds</h2>
           </div>
         </div>
