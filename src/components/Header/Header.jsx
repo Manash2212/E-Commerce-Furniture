@@ -10,6 +10,7 @@ import { MdOutlineShoppingCart } from "react-icons/md";
 import { IoReorderThree } from "react-icons/io5";
 import { useEffect, useState } from "react";
 import { RxCross2 } from "react-icons/rx";
+import { useSelector } from "react-redux";
 
 //
 
@@ -33,6 +34,8 @@ const mid_Sec = {
 const Header = () => {
   const [isActive, setIsActive] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
+
+  const totalQuantity = useSelector((state) => state.cart.totalQuantity);
 
   useEffect(() => {
     window.addEventListener("scroll", () => {
@@ -98,24 +101,24 @@ const Header = () => {
             ))}
           </ul>
         </div>
-        <div className="right flex items-center gap-4">
+        <div className="right flex items-center gap-2 md:gap-4">
           <motion.div
             className="favicon"
             variants={mid_Sec}
             initial="hidden"
             animate="visible"
           >
-            <CiHeart className="text-xl cursor-pointer" />
+            <CiHeart className="text-2xl max-md:text-xl cursor-pointer" />
           </motion.div>
           <motion.div
-            className="favicon relative"
+            className="favicon relative w-8 max-md:w-7 "
             variants={mid_Sec}
             initial="hidden"
             animate="visible"
           >
-            <MdOutlineShoppingCart className="text-xl cursor-pointer" />
-            <div className="count text-xs font-semibold w-[13px] h-[13px] absolute -top-1 -right-1 bg-red-500 text-white rounded-full flex items-center justify-center">
-              2
+            <MdOutlineShoppingCart className="text-2xl max-md:text-xl cursor-pointer" />
+            <div className="count text-[10px]  font-semibold w-4 h-4 max-md:w-[13px] max-md:h-[13px] absolute -top-1 right-1 bg-slate-800 text-white rounded-full flex items-center justify-center">
+              {totalQuantity}
             </div>
           </motion.div>
           <motion.img
