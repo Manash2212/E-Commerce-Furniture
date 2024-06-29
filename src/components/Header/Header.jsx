@@ -52,7 +52,7 @@ const Header = () => {
     <header
       className={`${
         isActive ? " bg-gray-100  py-2 shadow-md" : " bg-none py-4 "
-      } fixed top-0 w-screen z-10 transition-all font-primary`}
+      } fixed top-0 w-full h-[60px] z-10 transition-all font-primary`}
     >
       <div className="container max-w-[90%] mx-auto flex items-center justify-between ">
         <Link to={"/"}>
@@ -63,7 +63,7 @@ const Header = () => {
               animate="visible"
               src={Logo}
               alt="Company-logo"
-              className="h-12 max-sm:h-[36px]"
+              className="h-[45px] max-sm:h-[36px]"
             />
             <div className="heading flex flex-col ">
               <motion.h1
@@ -131,7 +131,7 @@ const Header = () => {
             className="w-[30px] cursor-pointer"
           />
           <div
-            className="right-mobile max-sm:block sm:hidden  text-xl z-99 cursor-pointer"
+            className="right-mobile max-sm:block sm:hidden  text-xl  cursor-pointer"
             onClick={() => setShowMenu(!showMenu)}
           >
             {showMenu ? <RxCross2 /> : <IoReorderThree />}

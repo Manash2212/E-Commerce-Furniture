@@ -41,7 +41,7 @@ const Home = () => {
 
   const year = new Date().getFullYear();
   return (
-    <div className="">
+    <div>
       {/* For Hero Section */}
       <Hero year={year} />
 

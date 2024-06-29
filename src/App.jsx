@@ -10,11 +10,11 @@ import Signup from "./pages/Signup";
 
 const Layout = () => {
   return (
-    <div>
+    <>
       <Header />
       <Outlet />
       <Footer />
-    </div>
+    </>
   );
 };
 
