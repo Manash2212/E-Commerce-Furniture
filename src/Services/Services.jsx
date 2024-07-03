@@ -5,7 +5,7 @@ const Services = () => {
   return (
     <section className="w-full">
       <div className="container  max-w-[80%]  text-center mx-auto py-10  ">
-        <div className="items flex flex-wrap items-center gap-5 ">
+        <div className="items flex flex-wrap items-center justify-center lg:justify-start xl:justify-center gap-5 ">
           {serviceData.map((item, i) => {
             const IconComponent = item.icon;
             return (
@@ -14,7 +14,7 @@ const Services = () => {
                 initial={{ opacity: 0, scale: 0 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 1, delay: i * 0.1 }}
-                className="mx-auto min-w-[240px]"
+                className="justify-center min-w-[240px]"
               >
                 <motion.div
                   className="item1  flex items-center justify-center  py-5 px-3 cursor-pointer gap-2 max-sm:gap-5 "

@@ -29,7 +29,7 @@ const ProductCard = ({ item }) => {
       <div className="container mx-auto flex flex-wrap  items-center py-5">
         <div className="item  shadow-md rounded-md py-2 px-2 cursor-pointer">
           <Link to={`/shop/${item.id}`}>
-            <div className="item_img  w-[300px] h-[250px] pb-2 max-sm:w-[280px] max-sm:h-[250px] sm:w-[250px] md:w-[280px] lg:w-[300px] ">
+            <div className="item_img  w-[300px] h-[250px] pb-2 max-sm:w-[280px] max-sm:h-[250px] sm:w-[250px] md:w-[280px] lg:w-[300px] xl:w-[270px] ">
               <motion.img
                 src={item.imgUrl}
                 alt="trending_product"
