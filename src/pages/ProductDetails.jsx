@@ -75,15 +75,15 @@ const ProductDetails = () => {
       <div className="container min-w-full">
         <CommonSection title={productName} />
         <div className="product_details max-w-[85vw] mx-auto">
-          <div className=" flex  gap-4 justify-around font-primary">
-            <div className="p_img flex flex-1  max-h-[65vh] ">
+          <div className=" flex  gap-4 max-md:gap-2 justify-around font-primary max-md:flex-col">
+            <div className="p_img flex flex-1 w-full max-h-[480px] max-md:max-h-[300px] max-sm:max-h-[280px]  border-2 border-black">
               <img
                 src={imgUrl}
                 alt="product_img"
-                className="object-contain w-full h-full"
+                className="object-contain max-h-full"
               />
             </div>
-            <div className="about_p max-h-[65vh] pt-10 flex flex-col flex-1">
+            <div className="about_p max-h-[65vh] pt-10 flex flex-col flex-1  border-2 border-black">
               <h1 className="text-2xl tracking-wide font-bold">
                 {productName}
               </h1>
