@@ -40,7 +40,9 @@ const ProductCard = ({ item }) => {
           </Link>
           <div className="img_details">
             <Link to={`/shop/${item.id}`}>
-              <h2 className="text-xl font-semibold">{item.productName}</h2>
+              <h2 className="text-xl font-semibold max-sm:text-lg">
+                {item.productName}
+              </h2>
             </Link>
             <p className="text-gray-400">{item.cateory}</p>
             <div className="price_add flex items-center justify-between mt-2 px-1">

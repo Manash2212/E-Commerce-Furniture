@@ -48,6 +48,14 @@ const Header = () => {
     { path: "/shop", display: "Shop" },
     { path: "/cart", display: "Cart" },
   ];
+
+  // onClick window.scroll to top
+  const scrollTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
   return (
     <header
       className={`${
@@ -64,6 +72,7 @@ const Header = () => {
               src={Logo}
               alt="Company-logo"
               className="h-[45px] max-sm:h-[36px]"
+              onClick={scrollTop}
             />
             <div className="heading flex flex-col ">
               <motion.h1
@@ -95,6 +104,7 @@ const Header = () => {
                 transition={{ duration: 1, delay: i * 0.1 }}
                 whileFocus={{ scale: 1.1 }}
                 className="text-xl active:font-bold focus:font-bold hover:text-blue-900"
+                onClick={scrollTop}
               >
                 <Link to={item.path}>{item.display}</Link>
               </motion.li>

@@ -5,6 +5,7 @@ export default {
     fontFamily: {
       primary: "Jost",
       secondary: "Roboto",
+      style: "Britney",
     },
 
     screens: {

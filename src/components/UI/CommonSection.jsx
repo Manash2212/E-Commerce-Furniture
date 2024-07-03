@@ -12,7 +12,7 @@ const CommonSection = ({ title }) => {
           />
           <div className="absolute inset-0 bg-black bg-opacity-60"></div>
           <div className="headings absolute inset-0 flex items-center justify-center">
-            <h1 className="text-white font-primary text-3xl font-bold max-md:text-2xl max-sm:text-xl max-sm:text-center">
+            <h1 className="text-white font-style text-3xl font-bold max-md:text-2xl max-sm:text-xl max-sm:text-center">
               {title}
             </h1>
           </div>
