@@ -65,7 +65,7 @@ const Home = () => {
         <div className="container3  mx-auto font-primary">
           <div className="best_sales_products mx-auto ">
             <h1 className="text-center text-2xl tracking-wide font-bold">
-              Trending Products
+              Best sales products
             </h1>
             <ProductList data={bestSalesProducts} />
           </div>

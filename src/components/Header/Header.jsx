@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { easeIn, motion } from "framer-motion";
 // Importing images
 import Logo from "../../assets/images/eco-logo.png";
@@ -35,6 +35,9 @@ const Header = () => {
   const [isActive, setIsActive] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
 
+  // if click the shopping bag then  navigate
+  const navigate = useNavigate();
+
   const totalQuantity = useSelector((state) => state.cart.totalQuantity);
 
   useEffect(() => {
@@ -55,6 +58,10 @@ const Header = () => {
       top: 0,
       behavior: "smooth",
     });
+  };
+
+  const navigateToCart = () => {
+    navigate("/cart");
   };
   return (
     <header
@@ -125,6 +132,7 @@ const Header = () => {
             variants={mid_Sec}
             initial="hidden"
             animate="visible"
+            onClick={navigateToCart}
           >
             <MdOutlineShoppingCart className="text-2xl max-md:text-xl cursor-pointer" />
             <div className="count text-[10px]  font-semibold w-4 h-4 max-md:w-[13px] max-md:h-[13px] absolute -top-1 right-1 bg-slate-800 text-white rounded-full flex items-center justify-center">

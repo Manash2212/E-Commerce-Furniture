@@ -17,7 +17,7 @@ const Services = () => {
                 className="justify-center min-w-[240px]"
               >
                 <motion.div
-                  className="item1  flex items-center justify-center  py-5 px-3 cursor-pointer gap-2 max-sm:gap-5 "
+                  className="item1  flex items-center justify-center  py-5 px-3 cursor-pointer gap-5 max-sm:gap-5 "
                   style={{ background: `${item.bg}` }}
                   whileHover={{ scale: 1.1 }}
                 >
