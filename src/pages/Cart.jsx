@@ -36,10 +36,10 @@ const Cart = () => {
             </p>
             <div className="cout_cshoppping flex flex-col gap-5 items-center mt-7">
               <button className="bg-slate-800 px-2 py-1 w-full rounded-md text-xl  text-white">
-                <Link to={"/shop"}>Checkout</Link>
+                <Link to={"/checkout"}>Checkout</Link>
               </button>
               <button className="bg-slate-800 px-2 py-1 w-full rounded-md text-xl  text-white">
-                <Link to={"/checkout"}>Continue Shopping</Link>
+                <Link to={"/shop"}>Continue Shopping</Link>
               </button>
             </div>
           </div>

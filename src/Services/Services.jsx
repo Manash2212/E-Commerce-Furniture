@@ -14,7 +14,7 @@ const Services = () => {
                 initial={{ opacity: 0, scale: 0 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 1, delay: i * 0.1 }}
-                className="justify-center min-w-[240px]"
+                className="flex-shrink min-w-[240px]"
               >
                 <motion.div
                   className="item1  flex items-center justify-center  py-5 px-3 cursor-pointer gap-5 max-sm:gap-5 "
