@@ -34,9 +34,9 @@ const cartSlice = createSlice({
         (total, item) => total + Number(item.price) * Number(item.quantity),
         0
       );
-      console.log(state.totalQuantity);
-      console.log(state.cartItems);
-      console.log(newItem);
+      // console.log(state.totalQuantity);
+      // console.log(state.cartItems);
+      // console.log(newItem);
     },
 
     // For delete the item from the queue
