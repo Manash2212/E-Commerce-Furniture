@@ -64,7 +64,7 @@ const DataContainer = ({ item }) => {
           <img
             src={item.imgUrl}
             alt="chair"
-            className="w-full h-[80%] object-contain"
+            className="w-full h-[70px] object-contain"
           />
         </div>
         <div className="title  w-[30%]">

@@ -11,6 +11,10 @@ import { IoReorderThree } from "react-icons/io5";
 import { useEffect, useState } from "react";
 import { RxCross2 } from "react-icons/rx";
 import { useSelector } from "react-redux";
+import useAuth from "../../custom-hook/useAuth";
+import { signOut } from "firebase/auth";
+import { auth } from "../../firebase.config";
+import { toast } from "react-toastify";
 
 //
 
@@ -34,6 +38,10 @@ const mid_Sec = {
 const Header = () => {
   const [isActive, setIsActive] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
+  const [childOptions, setChildOptions] = useState(false);
+
+  // get the user image from user details
+  const { currentUser } = useAuth();
 
   // if click the shopping bag then  navigate
   const navigate = useNavigate();
@@ -62,6 +70,18 @@ const Header = () => {
 
   const navigateToCart = () => {
     navigate("/cart");
+  };
+  const toggleChildVisibility = () => {
+    setChildOptions(!childOptions);
+  };
+  const logout = () => {
+    signOut(auth)
+      .then(() => {
+        toast.success("Logout Successful");
+      })
+      .catch((err) => {
+        toast.error(err.message);
+      });
   };
   return (
     <header
@@ -139,15 +159,55 @@ const Header = () => {
               {totalQuantity}
             </div>
           </motion.div>
-          <motion.img
-            whileTap={{ scale: 1.2 }}
-            variants={mid_Sec}
-            initial="hidden"
-            animate="visible"
-            src={User_Icon}
-            alt="users Icon"
-            className="w-[30px] cursor-pointer"
-          />
+          <div className="relative" onClick={toggleChildVisibility}>
+            <motion.img
+              whileTap={{ scale: 1.2 }}
+              variants={mid_Sec}
+              initial="hidden"
+              animate="visible"
+              src={
+                currentUser && currentUser.photoUrl
+                  ? currentUser.photoUrl
+                  : User_Icon
+              }
+              alt="u-icon"
+              className="w-[30px] cursor-pointer"
+            />
+            {/* Show the Log-out and signup button */}
+            <div
+              className={`${toggleChildVisibility ? "visible" : "hidden "} "" `}
+              onClick={toggleChildVisibility}
+            >
+              {childOptions && (
+                <div className="absolute w-[150px]  top-[50px] -left-16 border-2 border-black bg-white text-black flex flex-col items-center">
+                  {currentUser ? (
+                    <motion.span
+                      onClick={logout}
+                      className="cursor-pointer px-2 py-1 shadow-md w-full text-center"
+                      whileTap={{ scale: 1.1 }}
+                    >
+                      Logout
+                    </motion.span>
+                  ) : (
+                    <div className="login w-full flex flex-col items-center gap-2 py-2 mx-4 text-lg">
+                      <motion.span
+                        className="w-full shadow-md text-center "
+                        whileTap={{ scale: 1.2 }}
+                      >
+                        <Link to={"/login"}>Login</Link>
+                      </motion.span>
+                      <motion.span
+                        className="w-full shadow-md text-center"
+                        whileTap={{ scale: 1.2 }}
+                      >
+                        <Link to={"/signup"}>Signup</Link>
+                      </motion.span>
+                    </div>
+                  )}
+                </div>
+              )}
+            </div>
+          </div>
           <div
             className="right-mobile max-sm:block sm:hidden  text-xl  cursor-pointer"
             onClick={() => setShowMenu(!showMenu)}

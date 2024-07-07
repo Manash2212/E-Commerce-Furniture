@@ -98,7 +98,7 @@ const Checkout = () => {
                   type="button"
                   className=" bg-slate-800 text-white font-primary mt-4 px-4 py-1 rounded-md"
                 >
-                  Save
+                  Use this is delivery address
                 </button>
               </div>
             </form>
