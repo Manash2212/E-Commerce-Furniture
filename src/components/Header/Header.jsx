@@ -42,7 +42,7 @@ const Header = () => {
 
   // get the user image from user details
   const { currentUser } = useAuth();
-
+  // console.log(currentUser);
   // if click the shopping bag then  navigate
   const navigate = useNavigate();
 
@@ -166,8 +166,8 @@ const Header = () => {
               initial="hidden"
               animate="visible"
               src={
-                currentUser && currentUser.photoUrl
-                  ? currentUser.photoUrl
+                currentUser && currentUser.photoURL
+                  ? currentUser.photoURL
                   : User_Icon
               }
               alt="u-icon"

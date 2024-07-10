@@ -119,7 +119,7 @@ const Signup = () => {
                 <input
                   type="file"
                   className="border-2 border-gray-400 outline-none text-white  rounded-md mt-2 px-2 py-1"
-                  onChange={(e) => setFile(e.target.file[0])}
+                  onChange={(e) => setFile(e.target.files[0])}
                 />
               </div>
               <motion.div className="log text-center">
